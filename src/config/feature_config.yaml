@@ -1,0 +1,127 @@
+id: 
+  descritiva: true
+
+title:
+  descritiva: true
+
+condition:
+  descritiva: true
+
+thumbnail_id:
+  descritiva: true
+
+catalog_product_id:
+  descritiva: true
+
+listing_type_id:
+  descritiva: true
+
+sanitized_title:
+  descritiva: true
+
+permalink:
+  descritiva: true
+
+buying_mode:
+  descritiva: true
+
+site_id:
+  descritiva: true
+
+category_id:
+  descritiva: true
+
+domain_id:
+  descritiva: true
+
+thumbnail:
+  descritiva: true
+
+currency_id:
+  descritiva: true
+
+order_backend:
+  descritiva: true
+
+price:
+  descritiva: true
+
+original_price:
+  descritiva: true
+
+sale_price:
+  descritiva: true
+  struct: true
+
+available_quantity:
+  descritiva: true
+
+official_store_id:
+  descritiva: true
+
+use_thumbnail_id:
+  descritiva: true
+
+accepts_mercadopago:
+  descritiva: true
+  bool: true
+
+shipping:
+  descritiva: true
+  struct: true
+
+stop_time:
+  descritiva: true
+
+seller:
+  descritiva: true
+  struct: true
+
+address:
+  descritiva: true
+  struct: true
+
+attributes:
+  descritiva: true
+  struct: true
+
+location:
+  descritiva: true
+  struct: true
+
+seller_contact:
+  descritiva: true
+  struct: true
+
+installments:
+  descritiva: true
+  struct: true
+
+winner_item_id:
+  descritiva: true
+
+catalog_listing:
+  descritiva: true
+  bool: True
+
+discounts:
+  descritiva: true
+
+promotion_decorations:
+  descritiva: true
+
+promotions:
+  descritiva: true
+
+inventory_id:
+  descritiva: true
+
+variations_data:
+  descritiva: true
+  struct: true
+
+variation_id:
+  descritiva: true
+
+variation_filters:
+  descritiva: true

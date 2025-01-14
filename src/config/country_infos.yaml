@@ -1,0 +1,76 @@
+country:
+  - name: "Ecuador"
+    default_currency_id: "USD"
+    id: "MEC"
+
+  - name: "Dominicana"
+    default_currency_id: "DOP"
+    id: "MRD"
+
+  - name: "Argentina"
+    default_currency_id: "ARS"
+    id: "MLA"
+
+  - name: "Colombia"
+    default_currency_id: "COP"
+    id: "MCO"
+
+  - name: "Bolivia"
+    default_currency_id: "BOB"
+    id: "MBO"
+
+  - name: "Costa Rica"
+    default_currency_id: "CRC"
+    id: "MCR"
+
+  - name: "Uruguay"
+    default_currency_id: "UYU"
+    id: "MLU"
+
+  - name: "Brasil"
+    default_currency_id: "BRL"
+    id: "MLB"
+
+  - name: "Paraguay"
+    default_currency_id: "PYG"
+    id: "MPY"
+
+  - name: "Guatemala"
+    default_currency_id: "GTQ"
+    id: "MGT"
+
+  - name: "Cuba"
+    default_currency_id: "CUP"
+    id: "MCU"
+
+  - name: "Chile"
+    default_currency_id: "CLP"
+    id: "MLC"
+
+  - name: "El Salvador"
+    default_currency_id: "USD"
+    id: "MSV"
+
+  - name: "Perú"
+    default_currency_id: "PEN"
+    id: "MPE"
+
+  - name: "Mexico"
+    default_currency_id: "MXN"
+    id: "MLM"
+
+  - name: "Honduras"
+    default_currency_id: "HNL"
+    id: "MHN"
+
+  - name: "Venezuela"
+    default_currency_id: "VES"
+    id: "MLV"
+
+  - name: "Nicaragua"
+    default_currency_id: "NIO"
+    id: "MNI"
+
+  - name: "Panamá"
+    default_currency_id: "PAB"
+    id: "MPA"
