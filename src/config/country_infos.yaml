@@ -39,13 +39,13 @@ country:
     default_currency_id: "GTQ"
     id: "MGT"
 
-  - name: "Cuba"
-    default_currency_id: "CUP"
-    id: "MCU"
+  # - name: "Cuba"
+  #   default_currency_id: "CUP"
+  #   id: "MCU"
 
-  - name: "Chile"
-    default_currency_id: "CLP"
-    id: "MLC"
+  # - name: "Chile"
+  #   default_currency_id: "CLP"
+  #   id: "MLC"
 
   - name: "El Salvador"
     default_currency_id: "USD"
@@ -74,3 +74,6 @@ country:
   - name: "Panamá"
     default_currency_id: "PAB"
     id: "MPA"
+
+
+# países comentados não apresentaram registro na API

@@ -116,12 +116,14 @@ promotions:
 inventory_id:
   descritiva: true
 
-variations_data:
-  descritiva: true
-  struct: true
+# variations_data:
+#   descritiva: true
+#   hard_remove: true
 
-variation_id:
-  descritiva: true
+# variation_id:
+#   descritiva: true
+#   hard_remove: true
 
-variation_filters:
-  descritiva: true
+# variation_filters:
+#   descritiva: true
+#   hard_remove: true

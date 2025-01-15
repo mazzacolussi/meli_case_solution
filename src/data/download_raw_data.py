@@ -16,8 +16,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     country_info = yaml.safe_load(open(os.path.join('src', 'config', 'country_infos.yaml'), "r"))
-    features_config = yaml.safe_load(open(os.path.join('src', 'config', 'feature_infos.yaml'), "r"))
-
+    features_config = yaml.safe_load(open(os.path.join('src', 'config', 'feature_config.yaml'), "r"))
     features_struct = get_features_attribute(features_config, attribute='struct')
 
     offsets = [i for i in range(0, 1000, 50)]
@@ -34,7 +33,6 @@ def main():
 
 
     def process_country(country):
-        logger.info(f"{country['id']}:")
         cats = requests.get(f"https://api.mercadolibre.com/sites/{country['id']}/categories")
         category_ids_country = {item['id'] for item in cats.json()}
 
@@ -42,24 +40,31 @@ def main():
             dataframes = list(executor.map(lambda category_id: fetch_category_data(country['id'], category_id), category_ids_country))
 
         df_country_id = pd.concat(dataframes, ignore_index=True)
-
         return df_country_id
     
+    lst_dfs = []
     for country in country_info['country']:
-        df = process_country(country)
-        df[list(features_struct)] = df[list(features_struct)].apply(lambda x: str(x) if isinstance(x, dict) else x)
+        logger.info(f"Iniciando a criação da base Raw de {country['id']}.")
+        df_parcial = process_country(country)
+        logger.info(f"Shape: {df_parcial.shape}.")
 
-        path_output = os.path.join('data', 'raw', f'df_raw_{country["id"]}.parquet')
-        df.to_parquet(path_output, index=False, engine='pyarrow')
+        lst_dfs.append(df_parcial)
+        del df_parcial
+
+    logger.info(f"Concatenando os DataFrames.")
+    df = pd.concat(lst_dfs, ignore_index=True)
+    df.drop(columns=df.filter(like='variation').columns, axis=1, inplace=True)
+    logger.info(f"Sucesso! {df.shape}.")
+
+    logger.info(f"Salvando a base raw.")
+    path_output = os.path.join('data', 'raw', f'amostra_raw.parquet')
+    df.to_parquet(path_output, index=False, engine='pyarrow')
+    logger.info(f"Sucesso! Base Raw salva!")
     
     
 if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(levelname)s - %(message)s'
 
-    handler = logging.FileHandler(os.path.join('reports', 'logs', 'download_raw_data.txt'), encoding='utf-8')
-    handler.setLevel(logging.INFO)
-    handler.setFormatter(logging.Formatter(log_fmt))
-
-    logging.basicConfig(level=logging.INFO, handlers=[handler])
+    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    logging.basicConfig(level=logging.INFO, format=log_fmt)
 
     main()
