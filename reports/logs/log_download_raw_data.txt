@@ -1,0 +1,39 @@
+(case_env) PS D:\meli_case_solution> python .\src\data\download_raw_data.py
+2025-01-14 22:37:10,015 - __main__ - INFO - Iniciando a criação da base Raw de MEC.
+2025-01-14 22:37:29,576 - __main__ - INFO - Shape: (25583, 40).
+2025-01-14 22:37:29,576 - __main__ - INFO - Iniciando a criação da base Raw de MRD.
+2025-01-14 22:37:43,230 - __main__ - INFO - Shape: (10912, 39).
+2025-01-14 22:37:43,230 - __main__ - INFO - Iniciando a criação da base Raw de MLA.
+2025-01-14 22:38:10,078 - __main__ - INFO - Shape: (31782, 40).
+2025-01-14 22:38:10,078 - __main__ - INFO - Iniciando a criação da base Raw de MCO.
+2025-01-14 22:38:53,246 - __main__ - INFO - Shape: (30920, 40).
+2025-01-14 22:38:53,246 - __main__ - INFO - Iniciando a criação da base Raw de MBO.
+2025-01-14 22:39:02,349 - __main__ - INFO - Shape: (2821, 39).
+2025-01-14 22:39:02,349 - __main__ - INFO - Iniciando a criação da base Raw de MCR.
+2025-01-14 22:39:16,149 - __main__ - INFO - Shape: (14968, 39).
+2025-01-14 22:39:16,149 - __main__ - INFO - Iniciando a criação da base Raw de MLU.
+2025-01-14 22:40:09,122 - __main__ - INFO - Shape: (30287, 40).
+2025-01-14 22:40:09,123 - __main__ - INFO - Iniciando a criação da base Raw de MLB.
+2025-01-14 22:41:17,477 - __main__ - INFO - Shape: (31656, 40).
+2025-01-14 22:41:17,478 - __main__ - INFO - Iniciando a criação da base Raw de MPY.
+2025-01-14 22:41:26,981 - __main__ - INFO - Shape: (6454, 39).
+2025-01-14 22:41:26,981 - __main__ - INFO - Iniciando a criação da base Raw de MGT.
+2025-01-14 22:41:36,808 - __main__ - INFO - Shape: (4863, 39).
+2025-01-14 22:41:36,808 - __main__ - INFO - Iniciando a criação da base Raw de MSV.
+2025-01-14 22:41:45,747 - __main__ - INFO - Shape: (844, 39).
+2025-01-14 22:41:45,747 - __main__ - INFO - Iniciando a criação da base Raw de MPE.
+2025-01-14 22:42:17,259 - __main__ - INFO - Shape: (29911, 40).
+2025-01-14 22:42:17,259 - __main__ - INFO - Iniciando a criação da base Raw de MLM.
+2025-01-14 22:42:52,966 - __main__ - INFO - Shape: (29277, 40).
+2025-01-14 22:42:52,967 - __main__ - INFO - Iniciando a criação da base Raw de MHN.
+2025-01-14 22:43:01,114 - __main__ - INFO - Shape: (985, 39).
+2025-01-14 22:43:01,114 - __main__ - INFO - Iniciando a criação da base Raw de MLV.
+2025-01-14 22:43:20,003 - __main__ - INFO - Shape: (29712, 40).
+2025-01-14 22:43:20,003 - __main__ - INFO - Iniciando a criação da base Raw de MNI.
+2025-01-14 22:43:27,910 - __main__ - INFO - Shape: (805, 39).
+2025-01-14 22:43:27,910 - __main__ - INFO - Iniciando a criação da base Raw de MPA.
+2025-01-14 22:43:37,042 - __main__ - INFO - Shape: (3415, 39).
+2025-01-14 22:43:37,042 - __main__ - INFO - Concatenando os DataFrames.
+2025-01-14 22:43:39,757 - __main__ - INFO - Sucesso! (285195, 37).
+2025-01-14 22:43:39,758 - __main__ - INFO - Salvando a base raw.
+2025-01-14 22:43:54,660 - __main__ - INFO - Sucesso! Base Raw salva!
