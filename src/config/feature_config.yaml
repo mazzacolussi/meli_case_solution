@@ -61,6 +61,7 @@ official_store_id:
 
 use_thumbnail_id:
   descritiva: true
+  bool: True
 
 accepts_mercadopago:
   descritiva: true
