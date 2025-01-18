@@ -1,14 +1,14 @@
 id: 
-  descritiva: true
+  auxiliar: true
 
 title:
-  descritiva: true
+  auxiliar: true
 
 condition:
   descritiva: true
 
 thumbnail_id:
-  descritiva: true
+  auxiliar: true
 
 catalog_product_id:
   descritiva: true
@@ -21,6 +21,7 @@ sanitized_title:
 
 permalink:
   descritiva: true
+  hard_remove: true
 
 buying_mode:
   descritiva: true
@@ -33,15 +34,17 @@ category_id:
 
 domain_id:
   descritiva: true
+  cria_feature: true
 
 thumbnail:
-  descritiva: true
+  auxiliar: true
 
 currency_id:
   descritiva: true
 
 order_backend:
   descritiva: true
+  hard_remove: true
 
 price:
   descritiva: true
