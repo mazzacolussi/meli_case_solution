@@ -163,10 +163,11 @@ python src/models/generate_artifacts.py --clf_mode False
 Os resultados obtidos podem ser consultados em [notebook/10-Resultados.ipynb](notebook/10-Resultados.ipynb), bem como breves análises a respeito das métricas e interpretações.
 
 
+------------
 
 Organização do projeto
 
-------------
+
 
     ├── README.md                       <- README do projeto para guiar a sua execução.
     │
