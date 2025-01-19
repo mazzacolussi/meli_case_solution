@@ -115,9 +115,6 @@ promotions:
 inventory_id:
   hard_remove: true
 
-
-# Features criadas
-
 # sale_price_conditions_start_time:
 #   auxiliar: true
 #   cria_feature: true
