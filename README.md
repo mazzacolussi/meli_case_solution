@@ -98,7 +98,7 @@ Organização do projeto
     │   └── logs                        <- Logs dos scripts executáveis.
     │   └── visualization               <- Gráficos, imagens, evidências.
     │
-    ├── requirements.txt                <- Os requirements do projeto para o controle de versão dos pacotes.
+    ├── requirements.txt                <- Requirements do projeto para o controle de versão dos pacotes.
     │                                      Gerado de forma análoga a `pip freeze > requirements.txt`.
     │
     ├── pyproject.toml                  <- Torna o projeto instalável (`pip install -e .`). 
@@ -109,11 +109,11 @@ Organização do projeto
     │   │
     │   ├── __init__.py                 <- Torna src um módulo Python.
     │   │
-    │   ├── data                        <- Scripts para download da base raw e processamentos intermediários.
+    │   ├── data                        <- Scripts de download da base raw e processamentos intermediários.
     │   │   └── download_raw_data.py
     │   │   └── basic_process.py
     │   │
-    │   ├── features                    <- Scripts que envolvem processamento, criação e seleção de features.
+    │   ├── features                    <- Scripts de processamento, criação e seleção de features.
     │   │    └── build_features.py
     │   │    └── create_encoders.py
     │   │    └── feature_selection.py
