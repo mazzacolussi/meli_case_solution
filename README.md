@@ -35,7 +35,7 @@ python src/data/download_raw_data.py
 
 ## 2. Análise exploratória de dados
 
-A análise exploratória dos dados pode ser consultada em [notebook/01-EDA.ipynb](notebook/01-EDA.ipynb). Iniciou-se por uma análise de volumetria e univariada da base raw coletada, observando possíveis amostras repetidas, features pouco informativas e possibilidade de criação de novas features a partidas das já existentes. Posteriormente, após a criação das targets, iniciou-se uma análise bivariada, bem como possíveis eventos de data leaky que poderiam enviesar os modelos. Assim, essa análise foi de grande utilidade para a construção da base processada (próxima etapa).
+A análise exploratória dos dados pode ser consultada em [notebook/01-EDA.ipynb](notebooks/01-EDA.ipynb). Iniciou-se por uma análise de volumetria e univariada da base raw coletada, observando possíveis amostras repetidas, features pouco informativas e possibilidade de criação de novas features a partidas das já existentes. Posteriormente, após a criação das targets, iniciou-se uma análise bivariada, bem como possíveis eventos de data leaky que poderiam enviesar os modelos. Assim, essa análise foi de grande utilidade para a construção da base processada (próxima etapa).
 
 
 ## 3. Geração da base processada
@@ -64,18 +64,26 @@ python src/features/build_features.py
 
 ## 5. Split das bases de treino e teste
 
-
+Para realizar o split das bases de treino e teste, execute o comando abaixo. Nesse processo, serão criadas bases específicas para o modelo de classificação (responsável por prever se o produto é uma promoção) e para o modelo de regressão (destinado a prever o valor do desconto). Para o modelo de regressão, optou-se por utilizar apenas dados históricos de produtos que efetivamente foram promocionais, já que produtos não promocionais não possuem descontos.
 
 ```bash
 python src/data/train_test_split.py
 ```
+As bases estarão disponíveis na pasta `data/train_test`.
 
 
 ## 6. Feature Selection
 
+No processo de feature selection foi utilizado o Boruta. Execute os comandos abaixos para realizar a seleção das variáveis para cada um dos modelos. Ao finalizar a execução será gerado um arquivo das features selecionadas e rejeitadas (Classificação: [features_selected.yaml](src/features/selected/features_selected.yaml) e Regressão: [features_selected_regression.yaml](src/features/selected/features_selected_regression.yaml))
+
+
+> Classificação:
+
 ```bash
 python src/features/feature_selection_clf.py
 ```
+
+> Regressão:
 
 ```bash
 python src/features/feature_selection_reg.py
@@ -84,6 +92,24 @@ python src/features/feature_selection_reg.py
 
 ## 7. Create encoders
 
+Os encoders serão gerados nessa etapa na pasta `models`, assim como as bases encodadas para o início da modelagem. Esse procedimento é essencial para ter controle nos inputs dos modelos, como: preenchimentos de dados vazios, correção de strings, agrupamento de variáveis de alta cardinalidade e padronização de tipagem.
+
+> Classificação:
+
+```bash
+python src/features/create_encoder.py
+```
+> Regressão:
+
+```bash
+python src/features/create_encoder_regression.py
+```
+
+
+## 8. Model selection
+
+
+
 ```bash
 python src/features/feature_selection_clf.py
 ```
@@ -91,6 +117,44 @@ python src/features/feature_selection_clf.py
 ```bash
 python src/features/feature_selection_reg.py
 ```
+
+
+## 9. Tunning
+
+```bash
+python src/features/feature_selection_clf.py
+```
+
+```bash
+python src/features/feature_selection_reg.py
+```
+
+
+## 10. Model training
+
+```bash
+python src/features/feature_selection_clf.py
+```
+
+```bash
+python src/features/feature_selection_reg.py
+```
+
+
+## 11. Geração dos artefatos
+
+```bash
+python src/features/feature_selection_clf.py
+```
+
+```bash
+python src/features/feature_selection_reg.py
+```
+
+
+## 12. Análise dos resultados
+
+Os resultados obtidos podem ser consultados em [notebook/10-Resultados.ipynb](notebook/10-Resultados.ipynb), bem como breves análises a respeito das métricas e interpretações.
 
 
 
