@@ -34,7 +34,7 @@ python src/data/download_raw_data.py
 
 ## 2. Análise exploratória de dados
 
-A análise exploratória dos dados pode ser consulta em [notebook/01-EDA.ipynb](notebook/01-EDA.ipynb). Iniciou-se por uma análise de volumetria e univariada da base raw coletada, observando possíveis amostras repetidas, features pouco informativas e possibilidade de criação de novas features a partidas das já existentes. Posteriormente, após a criação das targets, iniciou-se uma análise bivariada, bem como possíveis eventos de data leaky que poderiam enviesar os modelos. Assim, essa análise foi de grande utilidade para a construção da base processada (próxima etapa).
+A análise exploratória dos dados pode ser consultada em [notebook/01-EDA.ipynb](notebook/01-EDA.ipynb). Iniciou-se por uma análise de volumetria e univariada da base raw coletada, observando possíveis amostras repetidas, features pouco informativas e possibilidade de criação de novas features a partidas das já existentes. Posteriormente, após a criação das targets, iniciou-se uma análise bivariada, bem como possíveis eventos de data leaky que poderiam enviesar os modelos. Assim, essa análise foi de grande utilidade para a construção da base processada (próxima etapa).
 
 
 ## 3. Geração da base processada
