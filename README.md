@@ -1,8 +1,9 @@
 Case de Logística - Meli
 ==================================================
 
-Neste case foi proposto a escolha de 1 entre 4 problemáticas. Sendo assim, optou-se pela primeira proposta:
+Este projeto visa resolver uma entre quatro problemáticas propostas em um case de logística para cientistas de dados do Mercado Livre. A solução abrange todo o processo, desde a criação da base de dados bruta, extraída via API, até a construção dos artefatos necessários para um eventual deploy em produção.
 
+A problemática escolhida consiste em desenvolver um modelo capaz de classificar se um determinado produto deve ser colocado em promoção e, além disso, quantificar o valor ideal do desconto. O contexto do case é descrito da seguinte forma:
 
 > En la vertical de pricing están interesados en dar sugerencias de descuentos para los
 > ítems del Marketplace. Actualmente, tienen un equipo experto en jación de precios,
