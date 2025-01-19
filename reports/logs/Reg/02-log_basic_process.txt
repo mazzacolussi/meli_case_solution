@@ -1,0 +1,31 @@
+D:\meli_case_solution>python src/data/basic_process.py       
+2025-01-18 22:25:18,157 - __main__ - INFO - Iniciando a criação da base interim.
+2025-01-18 22:25:18,157 - __main__ - INFO - Leitura da base raw.
+2025-01-18 22:25:39,319 - __main__ - INFO - Sucesso! Base lida. Shape da base: (285195, 37)
+2025-01-18 22:25:39,368 - __main__ - INFO - Tratando dados duplicados: excluindo linhas de mesmo `id`.
+2025-01-18 22:25:40,321 - __main__ - INFO - Linhas duplicadas removidas. Shape: (271640, 37).
+2025-01-18 22:25:40,321 - __main__ - INFO - Iniciando o processo de desempacotamento das features `struct`.
+2025-01-18 22:25:40,321 - __main__ - INFO - ----> feature: sale_price > conditions.
+2025-01-18 22:25:40,425 - __main__ - INFO - └── eligible
+2025-01-18 22:25:40,510 - __main__ - INFO - ----> feature: sale_price > metadata.
+2025-01-18 22:25:40,592 - __main__ - INFO - └── promotion_type
+2025-01-18 22:25:40,686 - __main__ - INFO - ----> feature: sale_price > payment_method_type.
+2025-01-18 22:25:40,750 - __main__ - INFO - ----> feature: sale_price > type.
+2025-01-18 22:25:40,815 - __main__ - INFO - ----> feature: attributes > brand.
+2025-01-18 22:25:41,169 - __main__ - INFO - ----> feature: attributes > color.
+2025-01-18 22:25:41,792 - __main__ - INFO - ----> feature: attributes > main_color.
+2025-01-18 22:25:42,341 - __main__ - INFO - ----> feature: attributes > weight.
+2025-01-18 22:25:42,889 - __main__ - INFO - ----> feature: shipping > free_shipping.
+2025-01-18 22:25:43,043 - __main__ - INFO - ----> feature: shipping > logistic_type.
+2025-01-18 22:25:43,156 - __main__ - INFO - ----> feature: address > city_name.
+2025-01-18 22:25:43,278 - __main__ - INFO - ----> feature: address > state_name.
+2025-01-18 22:25:43,378 - __main__ - INFO - ----> feature: installments > quantity.
+2025-01-18 22:25:43,461 - __main__ - INFO - Construção das targets: `promotion_flag` e `discount`.
+2025-01-18 22:25:43,480 - __main__ - INFO - Tratando a feature de preço do produto, evitando data leaky em casos que houve promoção.
+2025-01-18 22:25:43,506 - __main__ - INFO - Sucesso! Tratamento realizado.
+2025-01-18 22:25:43,507 - __main__ - INFO - Removendo as features `hard_remove` e `struct`: ['sale_price', 'shipping', 'seller', 'address', 'attributes', 'location', 'seller_contact', 'installments', 'sanitized_title', 'order_backend', 'winner_item_id', 'discounts', 'promotion_decorations', 'promotions', 'inventory_id', 'sale_price_type', 'sale_price_conditions', 'sale_price_metadata'].
+2025-01-18 22:25:44,758 - __main__ - INFO - Features removidas.
+2025-01-18 22:25:44,758 - __main__ - INFO - Removendo linhas em que não há valor do produto.
+2025-01-18 22:25:45,027 - __main__ - INFO - Sucesso! Shape da base: (265059, 37).
+2025-01-18 22:25:45,028 - __main__ - INFO - Salvando a base interim.
+2025-01-18 22:25:46,701 - __main__ - INFO - Sucesso! Base interim salva!

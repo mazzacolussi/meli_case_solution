@@ -1,0 +1,23 @@
+D:\meli_case_solution>python src/features/create_encoders_regression.py 
+2025-01-19 12:21:20,285 - __main__ - INFO - Iniciando a criação dos encoders
+2025-01-19 12:21:20,469 - __main__ - INFO - Tabela de treino lida. Shape: (49407, 37)
+2025-01-19 12:21:20,485 - __main__ - INFO - Processando o objeto Selector 1
+2025-01-19 12:21:20,485 - __main__ - INFO - Features do primeiro seletor: ['attributes_color_value', 'available_quantity', 'catalog_listing', 'currency_id', 'installments_quantity', 'listing_type_id', 'price_tratado', 'sale_price_metadata_promotion_type', 'shipping_free_shipping', 'shipping_logistic_type', 'site_id']
+2025-01-19 12:21:20,486 - __main__ - INFO - Processando o objeto Selector 2
+2025-01-19 12:21:20,486 - __main__ - INFO - Features do segundo seletor: ['attributes_color_value', 'available_quantity', 'catalog_listing', 'currency_id', 'installments_price', 'installments_quantity', 'listing_type_id', 'price_tratado', 'sale_price_metadata_promotion_type', 'shipping_free_shipping', 'shipping_logistic_type', 'site_id']
+2025-01-19 12:21:20,509 - __main__ - INFO - Processando o objeto FillNulls
+2025-01-19 12:21:20,509 - __main__ - INFO - Colunas a serem preenchidas com -999: ['available_quantity', 'installments_price', 'installments_quantity']
+2025-01-19 12:21:20,513 - __main__ - INFO - Processando o objeto BoolHandler
+2025-01-19 12:21:20,513 - __main__ - INFO - Colunas booleanas tratadas: ['catalog_listing', 'shipping_free_shipping']
+2025-01-19 12:21:20,516 - __main__ - INFO - Processando o objeto FillStringMissing
+2025-01-19 12:21:20,548 - __main__ - INFO - Colunas strings preenchidas com valor `<vazio>` : ['attributes_color_value', 'currency_id', 'listing_type_id', 'sale_price_metadata_promotion_type', 'shipping_logistic_type', 'site_id']
+2025-01-19 12:21:20,589 - __main__ - INFO - Processando o objeto NormalizeLowerString
+2025-01-19 12:21:20,589 - __main__ - INFO - Colunas a serem normalizadas: []
+2025-01-19 12:21:20,590 - __main__ - INFO - Colunas strings identificadas: ['attributes_color_value', 'currency_id', 'listing_type_id', 'sale_price_metadata_promotion_type', 'shipping_logistic_type', 'site_id']
+2025-01-19 12:21:20,591 - __main__ - INFO - Processando o objeto de codificação
+2025-01-19 12:21:20,651 - __main__ - INFO - Processando o objeto ConverteFloat
+2025-01-19 12:21:20,653 - __main__ - INFO - Sucesso! Encoders criados
+2025-01-19 12:21:20,653 - __main__ - INFO - Salvando os binários dos encoders
+2025-01-19 12:21:20,658 - __main__ - INFO - Sucesso! Binários salvos
+2025-01-19 12:21:20,658 - __main__ - INFO - Salvando a base encodada
+2025-01-19 12:21:20,960 - __main__ - INFO - Sucesso! Base salva!

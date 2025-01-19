@@ -1,0 +1,8 @@
+D:\meli_case_solution>python src/models/model_selection_regression.py
+2025-01-19 12:29:39,240 - __main__ - INFO - Iniciando a seleção do modelo
+2025-01-19 12:29:39,284 - __main__ - INFO - Tabela de treino lida. Shape: (49407, 13)
+2025-01-19 12:30:52,649 - __main__ - INFO - RF: 0.0145 +/- 0.0002
+2025-01-19 12:30:54,055 - __main__ - INFO - XGBoost: 0.0136 +/- 0.0002
+2025-01-19 12:30:55,150 - __main__ - INFO - LGBM: 0.0141 +/- 0.0002
+2025-01-19 12:30:55,151 - __main__ - INFO - Sucesso! Construindo o gráfico dos boxplots dos desempenho dos modelos
+2025-01-19 12:30:56,069 - __main__ - INFO - Sucesso! Etapa finalizada!

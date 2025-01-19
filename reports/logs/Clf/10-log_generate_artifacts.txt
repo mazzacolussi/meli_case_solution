@@ -1,0 +1,7 @@
+D:\meli_case_solution>python src/models/generate_artifacts.py
+2025-01-19 13:42:00,520 - __main__ - INFO - Lendo binários.
+2025-01-19 13:42:00,520 - __main__ - INFO - Iniciando a criação da pipeline do modelo de classificação.
+2025-01-19 13:42:00,567 - __main__ - INFO - Sucesso! Binários lidos.
+2025-01-19 13:42:01,853 - __main__ - INFO - Criando pipeline do modelo clf
+2025-01-19 13:42:01,853 - __main__ - INFO - Exportando o modelo clf final
+2025-01-19 13:42:01,881 - __main__ - INFO - Sucesso! Artefatos exportados!

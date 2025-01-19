@@ -1,0 +1,178 @@
+D:\meli_case_solution>python src/features/feature_selection_regression.py 
+2025-01-19 12:16:43,059 - __main__ - INFO - Iniciando o Feature Selection
+2025-01-19 12:16:43,100 - __main__ - INFO - Lendo a base de treino
+2025-01-19 12:16:44,444 - __main__ - INFO - Sucessos. Shape: (49407, 37)
+2025-01-19 12:16:44,444 - __main__ - INFO - Removendo features auxiliares e hard-remove
+2025-01-19 12:16:44,444 - __main__ - INFO - Features a serem removidas: ['official_store_name', 'thumbnail_id', 'catalog_product_id', 'permalink', 'category_id', 'id', 'thumbnail', 'stop_time', 'official_store_id', 'domain_id', 'title']
+2025-01-19 12:16:44,481 - __main__ - INFO - Sucesso! Shape: (49407, 26)
+2025-01-19 12:16:44,481 - __main__ - INFO - Agrupamento de features pré-definidas com muitas classes
+2025-01-19 12:16:44,530 - __main__ - INFO - Tratando colunas booleanas
+2025-01-19 12:16:44,535 - __main__ - INFO - Removendo acentos e deixando tudo minúsculo nas features string
+2025-01-19 12:16:44,596 - __main__ - INFO - Encoding das features string para mapeamento numérico
+2025-01-19 12:16:44,686 - __main__ - INFO - Tratando missings nas features numericas
+2025-01-19 12:16:44,729 - __main__ - INFO - Iniciando o Boruta
+Iteration:      1 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      2 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      3 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      4 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      5 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      6 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      7 / 40
+Confirmed:      0
+Tentative:      25
+Rejected:       0
+Iteration:      8 / 40
+Confirmed:      12
+Tentative:      2
+Rejected:       11
+Iteration:      9 / 40
+Confirmed:      12
+Tentative:      2
+Rejected:       11
+Iteration:      10 / 40
+Confirmed:      12
+Tentative:      2
+Rejected:       11
+Iteration:      11 / 40
+Confirmed:      12
+Tentative:      2
+Rejected:       11
+Iteration:      12 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      13 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      14 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      15 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      16 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      17 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      18 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      19 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      20 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      21 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      22 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      23 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      24 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      25 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      26 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      27 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      28 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      29 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      30 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      31 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      32 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      33 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      34 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      35 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      36 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      37 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      38 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+Iteration:      39 / 40
+Confirmed:      12
+Tentative:      1
+Rejected:       12
+
+
+BorutaPy finished running.
+
+Iteration:      40 / 40
+Confirmed:      12
+Tentative:      0
+Rejected:       12
+2025-01-19 12:17:24,950 - __main__ - INFO - Sucesso! Boruta executado. 12 variáveis selecionadas.
