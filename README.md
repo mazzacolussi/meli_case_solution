@@ -138,7 +138,7 @@ python src/models/tunning_reg.py
 
 ## 10. Model training
 
-O modelo final será obtido nessa etapa, em [notebook/09-Model.ipynb](notebooks/09-Model.ipynb).  Os modelos serão salvos como um arquivo `.pkl` na pasta `models/predictors` para ser utilizado posteriormente na análise de resultados.
+O modelo final será obtido nessa etapa, em [notebooks/09-Model.ipynb](notebooks/09-Model.ipynb).  Os modelos serão salvos como um arquivo `.pkl` na pasta `models/predictors` para ser utilizado posteriormente na análise de resultados.
 
 
 ## 11. Geração dos artefatos
@@ -160,7 +160,7 @@ python src/models/generate_artifacts.py --clf_mode False
 
 ## 12. Análise dos resultados
 
-Os resultados obtidos podem ser consultados em [notebook/10-Resultados.ipynb](notebooks/10-Resultados.ipynb), bem como breves análises a respeito das métricas e interpretações.
+Os resultados obtidos podem ser consultados em [notebooks/10-Resultados.ipynb](notebooks/10-Resultados.ipynb), bem como breves análises a respeito das métricas e interpretações.
 
 
 ------------
