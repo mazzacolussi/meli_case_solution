@@ -80,34 +80,36 @@ python src/features/feature_selection_reg.py
 
 
 
-Project Organization
+Organização do projeto
 
 ------------
 
-    ├── README.md                       <- README do projeto para guiar a execução do projeto.
+    ├── README.md                       <- README do projeto para guiar a sua execução.
     │
     ├── data
-    │   ├── interim                     <- Dados intermediários que forem recebem transformados a partir dos dados raw.
-    │   ├── processed                   <- Dados finais, conjuntos de dados canônicos para o processo de modelagem.
+    │   ├── interim                     <- Dados intermediários, transformados a partir dos dados raw.
+    │   ├── processed                   <- Dados finais: dados canônicos para o processo de modelagem.
     │   └── raw                         <- Dados raw, originais e imutáveis.
     │
-    ├── notebooks                       <- Jupyter notebooks para análise descritiva, acompanhamento do desenvolvimento e processo interativos.
+    ├── notebooks                       <- Jupyter notebooks para análise descritiva, 
+    │                                      acompanhamento do desenvolvimento e processo interativos.
     │
     ├── reports                         <- Relatórios do desenvolvimento.
     │   └── logs                        <- Logs dos scripts executáveis.
     │   └── visualization               <- Gráficos, imagens, evidências.
     │
-    ├── requirements.txt                <- Os requirements do projeto, controle de versão.
-    │                                      gerado de forma análoga a `pip freeze > requirements.txt`.
+    ├── requirements.txt                <- Os requirements do projeto para o controle de versão dos pacotes.
+    │                                      Gerado de forma análoga a `pip freeze > requirements.txt`.
     │
-    ├── pyproject.toml                  <- Torna o projeto instalável (`pip install -e .`) para que src possa ser importado sem conflitos de diretórios.
+    ├── pyproject.toml                  <- Torna o projeto instalável (`pip install -e .`). 
+    │                                      Permite que src possa ser importado sem conflitos de diretórios.
     │
     │
     ├── src                             <- Códigos fontes para uso neste projeto.
     │   │
     │   ├── __init__.py                 <- Torna src um módulo Python.
     │   │
-    │   ├── data                        <- Scripts para download da base raw e processamento intermediário.
+    │   ├── data                        <- Scripts para download da base raw e processamentos intermediários.
     │   │   └── download_raw_data.py
     │   │   └── basic_process.py
     │   │
@@ -115,18 +117,18 @@ Project Organization
     │   │    └── build_features.py
     │   │    └── create_encoders.py
     │   │    └── feature_selection.py
-    │   │    └── selected               <- Contém o arquivo de features selecionadas (pós feature selection).
+    │   │    └── selected               <- Contém o arquivo de features selecionadas.
     │   │  
     │   │    
-    │   ├──  models                     <- Scripts relacionados aos modelos (tunning, seleção e criação dos artefatos).
+    │   ├──  models                     <- Scripts relacionados aos modelos.
     │   │   └── generate_artifacts.py
     │   │   └── model_selection.py
     │   │   └── tunning.py
     │   │
     │   └── utils                       <- Pasta de pacotes internos do projeto.
     │
-    └── models                          <- Modelos treinados e serializados (encoders, predictor, artefato final).
-        └── encoders
+    └── models                          <- Modelos treinados e serializados 
+        └── encoders                       (encoders, predictor, artefato final).
         └── predictos
         └── wrapped
 
