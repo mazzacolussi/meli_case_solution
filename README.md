@@ -3,15 +3,15 @@ Case de Logística - Meli
 
 Neste case foi proposto a escolha de 1 entre 4 problemáticas. Sendo assim, optou-se pela primeira proposta:
 
-"""
-En la vertical de pricing están interesados en dar sugerencias de descuentos para los
-ítems del Marketplace. Actualmente, tienen un equipo experto en jación de precios,
-los cuales revisan ítems manualmente para encontrar si el ítem requiere un descuento
-y cuál sería el descuento adecuado para generar un aumento en las ventas en el
-corto plazo. Este equipo busca disminuir las cargas manuales que tienen sus
-colaboradores para que puedan dedicarse a otras actividades más rentables para el
-negocio.
-"""
+
+> En la vertical de pricing están interesados en dar sugerencias de descuentos para los
+> ítems del Marketplace. Actualmente, tienen un equipo experto en jación de precios,
+> los cuales revisan ítems manualmente para encontrar si el ítem requiere un descuento
+> y cuál sería el descuento adecuado para generar un aumento en las ventas en el
+> corto plazo. Este equipo busca disminuir las cargas manuales que tienen sus
+> colaboradores para que puedan dedicarse a otras actividades más rentables para el
+> negocio.
+
 
 
 # Etapas de desenvolvimento
@@ -34,23 +34,36 @@ python src/data/download_raw_data.py
 
 ## 2. Análise exploratória de dados
 
- [notebook/01-Analise_ingestao.ipynb]
+A análise exploratória dos dados pode ser consulta em [notebook/01-EDA.ipynb](notebook/01-EDA.ipynb). Iniciou-se por uma análise de volumetria e univariada da base raw coletada, observando possíveis amostras repetidas, features pouco informativas e possibilidade de criação de novas features a partidas das já existentes. Posteriormente, após a criação das targets, iniciou-se uma análise bivariada, bem como possíveis eventos de data leaky que poderiam enviesar os modelos. Assim, essa análise foi de grande utilidade para a construção da base processada (próxima etapa).
 
 
 ## 3. Geração da base processada
+
+A finalidade dessa etapa é a construção de uma base pronta para o início do desenvolvimento do modelo, semelhante ao conceito de bases SOT. logo, há o desempacotamento de colunas potenciais a serem utilizadas nos modelos, conforme a breve análise exploratória realizada na etapa anterior. Então, o processo resultante proporcionará uma base pronta para consumo, removendo possíveis duplicadas, features não informativas e criação das targets dos modelos.
+
+Para a efetivação dessa etapa, basta executar:
 
 ```bash
 python src/data/basic_process.py
 ```
 
-## 4. Split das bases de treino e teste
+A tabela resultante estará na pasta `data/processed`.
+
+
+## 4. Geração da base interim
+
+O processo de criação de features será realizado nessa etapa, produzindo uma base pronta para a modelagem em `data/interim`. Para tal, o script de apoio está em [src/utils/transformers.py](src/utils/transformers.py), este servirá como um pacote interno do projeto, onde há classes auxiliares para a construção da pipeline completa de modelagem.
+
+Execute:
 
 ```bash
-python src/data/train_test_split.py
+python src/features/build_features.py
 ```
 
 
 ## 5. Split das bases de treino e teste
+
+
 
 ```bash
 python src/data/train_test_split.py
