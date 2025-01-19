@@ -47,7 +47,7 @@ def main():
 
     features_sale_price = ['conditions', 'metadata', 'payment_method_type', 'type']
     mapping_sale_price_features = {
-        'conditions': ['start_time', 'end_time', 'eligible'],
+        'conditions': ['eligible'],
         'metadata': ['promotion_type']
     }
 
@@ -62,9 +62,9 @@ def main():
                 df[f'sale_price_{feature}_{sub_feature}'] = df[f'sale_price_{feature}'].apply(lambda x: unpack_feature(x, sub_feature))
 
 
-    df['sale_price_conditions_start_time'] = pd.to_datetime(df['sale_price_conditions_start_time'], errors = 'coerce')
-    df['sale_price_conditions_end_time'] = pd.to_datetime(df['sale_price_conditions_end_time'], errors = 'coerce')
-    df['stop_time'] = pd.to_datetime(df['stop_time'], errors = 'coerce')
+    # df['sale_price_conditions_start_time'] = pd.to_datetime(df['sale_price_conditions_start_time'], errors = 'coerce')
+    # df['sale_price_conditions_end_time'] = pd.to_datetime(df['sale_price_conditions_end_time'], errors = 'coerce')
+    # df['stop_time'] = pd.to_datetime(df['stop_time'], errors = 'coerce')
 
 
 
@@ -86,18 +86,7 @@ def main():
         df[f'address_{feature}'] = df['address'].replace({np.nan: None}).apply(lambda x: unpack_feature(x, feature))    
 
 
-    features_address = ['city_name', 'state_name']
-    for feature in features_address:
-        logger.info(f'----> feature: address > {feature}.')
-        df[f'address_{feature}'] = df['address'].replace({np.nan: None}).apply(lambda x: unpack_feature(x, feature))    
-
-
-
-    features_installments = ['quantity', 'metadata']
-    mapping_installments_features = {
-        'metadata': ['additional_bank_interest', 'meliplus_installments']
-    }
-
+    features_installments = ['quantity']
     for feature in features_installments:
         logger.info(f'----> feature: installments > {feature}.')
         df[f'installments_{feature}'] = df['installments'].apply(lambda x: unpack_feature(x, feature))
@@ -115,7 +104,6 @@ def main():
 
     features_struct = get_features_attribute(features_config, attribute = 'struct')
     features_hard_remove = get_features_attribute(features_config, attribute = 'hard_remove')
-
 
     cols_to_remove = \
         list(features_struct.keys()) + \

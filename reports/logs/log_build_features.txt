@@ -1,0 +1,7 @@
+D:\meli_case_solution>python src/features/build_features.py
+2025-01-18 22:26:58,756 - __main__ - INFO - Iniciando a criação das features.
+2025-01-18 22:27:00,025 - __main__ - INFO - Shape da base: (265059, 37).
+2025-01-18 22:27:00,025 - __main__ - INFO - Iniciando processamento.
+2025-01-18 22:27:05,386 - __main__ - INFO - Sucesso! Processamento finalizado. Shape da tabela processada: (265059, 40)
+2025-01-18 22:27:05,387 - __main__ - INFO - Salvando a base interim.
+2025-01-18 22:27:07,030 - __main__ - INFO - Sucesso! Base interim salva!

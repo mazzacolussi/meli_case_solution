@@ -1,0 +1,10 @@
+D:\meli_case_solution>python src/data/train_test_split.py
+2025-01-18 22:27:34,304 - __main__ - INFO - Iniciando o split da base - Classificação promoção
+2025-01-18 22:27:35,173 - __main__ - INFO - Shape da base: (265059, 40)
+2025-01-18 22:27:35,629 - __main__ - INFO - Salvando a base de treino. Shape (212047, 36).
+2025-01-18 22:27:36,826 - __main__ - INFO - Salvando a base de teste. Shape (53012, 36).
+2025-01-18 22:27:37,935 - __main__ - INFO - Sucesso! Base para o treino do modelo de promoção salva!
+2025-01-18 22:27:37,935 - __main__ - INFO - Iniciando o split da base - Quantificação do desconto.
+2025-01-18 22:27:38,094 - __main__ - INFO - Salvando a base de treino. Shape (49407, 37).
+2025-01-18 22:27:38,400 - __main__ - INFO - Salvando a base de teste. Shape (12352, 37).
+2025-01-18 22:27:38,505 - __main__ - INFO - Sucesso! Base para o treino do modelo de quantificação do desconto salva!

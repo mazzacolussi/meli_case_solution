@@ -1,0 +1,54 @@
+D:\meli_case_solution>python src/features/feature_selection_clf.py
+2025-01-18 22:28:08,038 - __main__ - INFO - Iniciando o Feature Selection
+2025-01-18 22:28:08,052 - __main__ - INFO - Lendo a base de treino
+2025-01-18 22:28:08,769 - __main__ - INFO - Sucessos. Shape: (212047, 36)
+2025-01-18 22:28:08,769 - __main__ - INFO - Removendo features auxiliares e hard-remove
+2025-01-18 22:28:08,770 - __main__ - INFO - Features a serem removidas: ['domain_id', 'official_store_name', 'thumbnail', 'title', 'catalog_product_id', 'category_id', 'thumbnail_id', 'permalink', 'stop_time', 'id', 'official_store_id']
+2025-01-18 22:28:08,834 - __main__ - INFO - Sucesso! Shape: (212047, 25)
+2025-01-18 22:28:08,834 - __main__ - INFO - Agrupamento de features pré-definidas com muitas classes
+2025-01-18 22:28:08,946 - __main__ - INFO - Tratando colunas booleanas
+2025-01-18 22:28:08,990 - __main__ - INFO - Removendo acentos e deixando tudo minúsculo nas features string
+2025-01-18 22:28:09,217 - __main__ - INFO - Encoding das features string para mapeamento numérico
+2025-01-18 22:28:09,545 - __main__ - INFO - Tratando missings nas features numericas
+2025-01-18 22:28:09,676 - __main__ - INFO - Iniciando o Boruta
+Iteration:      1 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      2 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      3 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      4 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      5 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      6 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      7 / 40
+Confirmed:      0
+Tentative:      24
+Rejected:       0
+Iteration:      8 / 40
+Confirmed:      18
+Tentative:      0
+Rejected:       6
+
+
+BorutaPy finished running.
+
+Iteration:      9 / 40
+Confirmed:      18
+Tentative:      0
+Rejected:       6
+2025-01-18 22:28:28,307 - __main__ - INFO - Sucesso! Boruta executado. 18 variáveis selecionadas.

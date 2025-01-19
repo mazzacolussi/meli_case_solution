@@ -3,6 +3,8 @@
 
 # external package
 Boruta==0.3
+click
+lightgbm==3.3.2
 matplotlib==3.7.5
 numpy==1.23.5
 optuna==3.4.0
@@ -12,4 +14,5 @@ requests==2.32.3
 scikit-learn==1.2.0
 scipy==1.10.1
 seaborn==0.13.2
+unidecode
 xgboost==2.1.2

@@ -1,0 +1,23 @@
+D:\meli_case_solution>python src/features/create_encoders.py
+2025-01-18 22:29:14,013 - __main__ - INFO - Iniciando a criação dos encoders
+2025-01-18 22:29:14,692 - __main__ - INFO - Tabela de treino lida. Shape: (212047, 36)
+2025-01-18 22:29:14,710 - __main__ - INFO - Processando o objeto Selector 1
+2025-01-18 22:29:14,710 - __main__ - INFO - Features do primeiro seletor: ['accepts_mercadopago', 'attributes_color_value', 'attributes_main_color_value', 'available_quantity', 'buying_mode', 'catalog_listing', 'condition', 'currency_id', 'installments_quantity', 'listing_type_id', 'price_tratado', 'sale_price_conditions_eligible', 'sale_price_payment_method_type', 'shipping_free_shipping', 'site_id', 'use_thumbnail_id']
+2025-01-18 22:29:14,710 - __main__ - INFO - Processando o objeto Selector 2
+2025-01-18 22:29:14,710 - __main__ - INFO - Features do segundo seletor: ['accepts_mercadopago', 'attributes_color_value', 'attributes_main_color_value', 'available_quantity', 'buying_mode', 'catalog_listing', 'condition', 'currency_id', 'installments_price', 'installments_quantity', 'listing_type_id', 'price_tratado', 'sale_price_conditions_eligible', 'sale_price_payment_method_type', 'shipping_free_shipping', 'shipping_logistic_type', 'site_id', 'use_thumbnail_id']
+2025-01-18 22:29:14,766 - __main__ - INFO - Processando o objeto FillNulls
+2025-01-18 22:29:14,767 - __main__ - INFO - Colunas a serem preenchidas com -999: ['available_quantity', 'installments_price', 'installments_quantity']
+2025-01-18 22:29:14,776 - __main__ - INFO - Processando o objeto BoolHandler
+2025-01-18 22:29:14,777 - __main__ - INFO - Colunas booleanas tratadas: ['accepts_mercadopago', 'catalog_listing', 'sale_price_conditions_eligible', 'shipping_free_shipping', 'use_thumbnail_id']
+2025-01-18 22:29:14,812 - __main__ - INFO - Processando o objeto FillStringMissing
+2025-01-18 22:29:14,821 - __main__ - INFO - Colunas strings preenchidas com valor `<vazio>` : ['attributes_color_value', 'attributes_main_color_value', 'buying_mode', 'condition', 'currency_id', 'listing_type_id', 'sale_price_payment_method_type', 'shipping_logistic_type', 'site_id']
+2025-01-18 22:29:15,083 - __main__ - INFO - Processando o objeto NormalizeLowerString
+2025-01-18 22:29:15,083 - __main__ - INFO - Colunas a serem normalizadas: []
+2025-01-18 22:29:15,085 - __main__ - INFO - Colunas strings identificadas: ['attributes_color_value', 'attributes_main_color_value', 'buying_mode', 'condition', 'currency_id', 'listing_type_id', 'sale_price_payment_method_type', 'shipping_logistic_type', 'site_id']
+2025-01-18 22:29:15,085 - __main__ - INFO - Processando o objeto de codificação
+2025-01-18 22:29:15,479 - __main__ - INFO - Processando o objeto ConverteFloat
+2025-01-18 22:29:15,496 - __main__ - INFO - Sucesso! Encoders criados
+2025-01-18 22:29:15,497 - __main__ - INFO - Salvando os binários dos encoders
+2025-01-18 22:29:15,513 - __main__ - INFO - Sucesso! Binários salvos
+2025-01-18 22:29:15,514 - __main__ - INFO - Salvando a base encodada
+2025-01-18 22:29:15,682 - __main__ - INFO - Sucesso! Base salva!

@@ -11,17 +11,16 @@ thumbnail_id:
   auxiliar: true
 
 catalog_product_id:
-  descritiva: true
+  auxiliar: true
 
 listing_type_id:
   descritiva: true
 
 sanitized_title:
-  descritiva: true
+  hard_remove: true
 
 permalink:
-  descritiva: true
-  hard_remove: true
+  auxiliar: true
 
 buying_mode:
   descritiva: true
@@ -30,10 +29,11 @@ site_id:
   descritiva: true
 
 category_id:
-  descritiva: true
+  auxiliar: true
+  cria_feature: true
 
 domain_id:
-  descritiva: true
+  auxiliar: true
   cria_feature: true
 
 thumbnail:
@@ -43,7 +43,6 @@ currency_id:
   descritiva: true
 
 order_backend:
-  descritiva: true
   hard_remove: true
 
 price:
@@ -53,14 +52,17 @@ original_price:
   descritiva: true
 
 sale_price:
-  descritiva: true
   struct: true
 
 available_quantity:
   descritiva: true
+  fill_null: true
 
 official_store_id:
-  descritiva: true
+  auxiliar: true
+
+official_store_name:
+  auxiliar: true
 
 use_thumbnail_id:
   descritiva: true
@@ -71,63 +73,152 @@ accepts_mercadopago:
   bool: true
 
 shipping:
-  descritiva: true
   struct: true
 
 stop_time:
-  descritiva: true
+  auxiliar: true
 
 seller:
-  descritiva: true
   struct: true
 
 address:
-  descritiva: true
   struct: true
 
 attributes:
-  descritiva: true
   struct: true
 
 location:
-  descritiva: true
   struct: true
 
 seller_contact:
-  descritiva: true
   struct: true
 
 installments:
-  descritiva: true
   struct: true
 
 winner_item_id:
-  descritiva: true
+  hard_remove: true
 
 catalog_listing:
   descritiva: true
   bool: True
 
 discounts:
-  descritiva: true
+  hard_remove: true
 
 promotion_decorations:
-  descritiva: true
+  hard_remove: true
 
 promotions:
-  descritiva: true
+  hard_remove: true
 
 inventory_id:
+  hard_remove: true
+
+
+# Features criadas
+
+# sale_price_conditions_start_time:
+#   auxiliar: true
+#   cria_feature: true
+
+# sale_price_conditions_end_time:
+#   auxiliar: true
+#   cria_feature: true
+
+sale_price_conditions_eligible:
+  descritiva: true
+  bool: true
+
+sale_price_metadata_promotion_type:
   descritiva: true
 
-# variations_data:
-#   descritiva: true
-#   hard_remove: true
+sale_price_payment_method_type:
+  descritiva: true
 
-# variation_id:
-#   descritiva: true
-#   hard_remove: true
+sale_price_type:
+  hard_remove: true
 
-# variation_filters:
+price_tratado:
+  descritiva: true
+
+attributes_brand_value:
+  descritiva: true
+  feature_to_group: 100
+
+attributes_color_value:
+  descritiva: true
+
+attributes_main_color_value:
+  descritiva: true
+
+attributes_weight_value:
+  descritiva: true
+
+shipping_free_shipping:
+  descritiva: true
+  bool: True
+
+shipping_logistic_type:
+  descritiva: true
+
+address_city_name:
+  descritiva: true
+  feature_to_group: 100
+
+address_state_name:
+  descritiva: true
+  feature_to_group: 100
+
+installments_quantity:
+  descritiva: true
+  fill_null: true
+
+# installments_metadata_additional_bank_interest:
 #   descritiva: true
-#   hard_remove: true
+#   bool: true
+
+# installments_metadata_meliplus_installments:
+#   descritiva: true
+#   bool: true
+
+
+#####################################################################################
+######################### FEATURES CRIADA NO CriaFeatures ###########################
+#####################################################################################
+
+domain_id_tratado:
+  feature_to_group: 100
+  feature_to_normalize: true
+
+category_id_tratado:
+  feature_to_group: 100
+
+# sale_price_conditions_start_time_day: 
+#   fill_null: true
+
+# sale_price_conditions_start_time_month:
+#   fill_null: true
+
+# sale_price_conditions_start_time_weekday:
+#   fill_null: true
+
+# diff_start_end_time:
+#   fill_null: true
+
+# diff_start_stop_time:
+#   fill_null: true
+
+installments_price:
+  fill_null: true
+
+
+#####################################################################################
+##################################### TARGETS #######################################
+#####################################################################################
+
+promotion_flag:
+  target_clf: true
+
+discount:
+  target_reg: true

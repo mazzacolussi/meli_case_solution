@@ -1,0 +1,26 @@
+rejected_boruta:
+- address_city_name
+- address_state_name
+- attributes_brand_value
+- attributes_weight_value
+- category_id_tratado
+- domain_id_tratado
+support_boruta:
+- accepts_mercadopago
+- attributes_color_value
+- attributes_main_color_value
+- available_quantity
+- buying_mode
+- catalog_listing
+- condition
+- currency_id
+- installments_price
+- installments_quantity
+- listing_type_id
+- price_tratado
+- sale_price_conditions_eligible
+- sale_price_payment_method_type
+- shipping_free_shipping
+- shipping_logistic_type
+- site_id
+- use_thumbnail_id
