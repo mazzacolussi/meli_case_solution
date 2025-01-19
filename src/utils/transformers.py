@@ -1,33 +1,88 @@
 import pandas as pd
 import numpy as np
-import unicodedata
+import re
 import json
 
+from unidecode import unidecode
 from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.metrics import roc_auc_score
+
+def brand_processing(brand):
+    if brand is not None:
+        brand = brand.lower()
+        return re.sub(r'[^\w\s]', '', brand)
+    else:
+        return None
 
 
+def color_name_processing(color):
+    if color is not None:
+        color = color.lower()
+        color = re.sub(r'[^\w\s]', '', color)
 
-def trata_ordenacao(words:str) -> str:
+        color_dict = {
+            'black': ['negro', 'preto'],
+            'white': ['blanco', 'branco'],
+            'gray': ['gris', 'cinza'],
+            'dark gray': ['gris oscuro', 'cinza escuro'],
+            'blue': ['azul', 'azul marinho', 'marinho'],
+            'silver': ['plateado', 'prateado', 'prata', 'plata'],
+            'red': ['rojo', 'vermelho'],
+            'green': ['verde'],
+            'pink': ['rosa'],
+            'yellow': ['amarillo', 'amarelo'],
+            'orange': ['naranja', 'laranja'],
+            'transparent': ['transparente'],
+            'multicolor': ['multicolor'],
+            'turquoise': ['turquesa'],
+            'brown': ['marron', 'marrom'],
+            'purple': ['purpura', 'roxo'],
+            'gold': ['dorado', 'ouro'],
+            'beige': ['beige', 'bege'],
+            'maroon': ['granate', 'marrom escuro'],
+            'violet': ['violeta'],
+            'magenta': ['magenta'],
+            'salmon': ['salmao', 'salmon'],
+        }
 
-    if type(words) == str:
-        if words.strip('[]').lower() != 'none':
-            words = words.strip('[]').replace("'", "")
-            lst = words.split(', ')
-            lst = [word.upper() for word in lst]
-            lst.sort()
-            return str(lst)
+        if color in color_dict:
+            return color
         else:
-            return np.nan
+            for col_en, col_esp_pt in color_dict.items():
+                if color in col_esp_pt:
+                    return col_en
+            return '<other>'
     else:
+        return None
+
+
+def weight_processing(weight_str_value) -> float:
+    if type(weight_str_value) == str:
+        if weight_str_value.strip() != '':
+            value, unit = re.match(r'(-?[\d.,]+)\s*([a-zA-Z]+)', weight_str_value.strip().lower(), re.IGNORECASE).groups()
+            conversao = {
+                'kg': 1000,
+                'g': 1,
+                'lb': 453.592,
+                'oz': 28.3495,
+                'mg': 0.001,
+                'mcg': 0.000001,
+                't': 1000000
+            }
+            mult = conversao.get(unit, np.nan)
+            output_value = float(value)*mult
+
+            if output_value < 0:
+                return np.nan
+            else:
+                output_value
+    return np.nan
+
+
+def ratio_calc(num, denom):
+    if np.isnan(denom):
         return np.nan
-
-
-def position_counter(words) -> int:
-    if type(words) == str:
-        return words.count(',') +1
     else:
-        np.nan
+        return num/denom
 
 
 class CriaFeatures(BaseEstimator, TransformerMixin):
@@ -50,11 +105,24 @@ class CriaFeatures(BaseEstimator, TransformerMixin):
 
     def cria_features(self, X):
         def aplica_variaveis(X: pd.DataFrame) -> pd.DataFrame:
-            X['fecha'] = pd.to_datetime(X['fecha'])
-            X['dia_do_mes'] = X['fecha'].dt.day
-            X['dia_da_semana'] = X['fecha'].dt.weekday
-            X['percentual_do_mes'] = (X['fecha'].dt.day / X['fecha'].dt.days_in_month)
-            X['hora_do_dia'] = X['fecha'].dt.hour
+
+            X["category_id_tratado"] = X["category_id"].apply(lambda x: x[3:])
+            X['domain_id_tratado'] = X['domain_id'].apply(lambda x: x[4:])
+
+            X['attributes_brand_value'] = X['attributes_brand_value'].apply(brand_processing)
+            X['attributes_color_value'] = X['attributes_color_value'].apply(color_name_processing)
+            X['attributes_main_color_value'] = X['attributes_main_color_value'].apply(color_name_processing)
+            X['attributes_weight_value'] = X['attributes_weight_value'].apply(weight_processing)
+
+            X['address_city_name'] = X['address_city_name'].apply(
+                lambda x: unidecode(x).lower() if x is not None else x
+            )
+            X['address_state_name'] = X['address_state_name'].apply(
+               lambda x: unidecode(x).lower() if x is not None else x
+            )
+
+            X['installments_price'] = X.apply(lambda x: ratio_calc(x['price_tratado'], x['installments_quantity']), axis=1)
+
             return X
         
         if self.training:
@@ -145,16 +213,8 @@ class BoolHandler:
     def fit(self, X, y=None):
         return self
     
-    def transform(self, X):
-        X.loc[:, self.cols_to_adjust] = X.loc[:, self.cols_to_adjust].replace({
-            'Y': True,
-            'Yes': True,
-            'N': False,
-            'No': False
-        })
-        
+    def transform(self, X):        
         X.loc[:, self.cols_to_adjust] = X.loc[:, self.cols_to_adjust].astype(float).fillna(-1.0)
-        
         return X
     
 
@@ -209,32 +269,3 @@ class ConverteFloat:
     def transform(self, X):
         X = X.astype(float)
         return X
-
-
-
-class Calibrator(BaseEstimator):
-    def __init__(self, model, params):
-        self.model=model
-        self.params=params
-
-    def predict_proba(self, X, **kwargs):
-        """Faz o predict_proba semelhantes aos estimadores base do sklearn"""
-        return self.calibrated_model(self.model.predict_proba(X, **kwargs))
-    
-    def calibrated_model(self, prediction):
-        """Calibra o modelo base"""
-
-        prediction = prediction*self.params[0] + (prediction**2)*self.params[1] + (prediction**3)*self.params[2]
-        prediction = np.where(prediction < 0, 0, prediction)
-        prediction = np.where(prediction > 1, 1, prediction)
-
-        return prediction
-    
-
-
-def custom_auc_eval(y_true, y_pred):
-
-    is_higher_better=True
-    auc = roc_auc_score(y_true, y_pred, max_fpr=0.1)
-
-    return 'pAUC-1%', auc, is_higher_better
