@@ -121,14 +121,16 @@ python src/features/feature_selection_reg.py
 ```
 
 
-## 9. Tunning
+## 9. Tuning de hiperparâmetros
 
+O modelo baseline de melhor desempenho identificado na etapa anterior foi selecionado para o processo de tuning. Para essa tarefa, utilizou-se o Optuna, este módulo permite personalizar a função objetivo a ser otimizada. Diferentemente dos métodos tradicionais de busca de hiperparâmetros, o Optuna realiza uma exploração inteligente do espaço de hiperparâmetros, por meio de otimização bayesiana, ajustando-se com base nos resultados empíricos das iterações anteriores para melhorar a iteração do momento.
 
-
+> Classificação:
 ```bash
 python src/models/tunning.py
 ```
 
+> Regressão:
 ```bash
 python src/models/tunning_reg.py
 ```
@@ -136,23 +138,22 @@ python src/models/tunning_reg.py
 
 ## 10. Model training
 
-```bash
-python src/features/feature_selection_clf.py
-```
-
-```bash
-python src/features/feature_selection_reg.py
-```
+O modelo final será obtido nessa etapa, em [notebook/09-Model.ipynb](notebook/09-Model.ipynb).  Os modelos serão salvos como um arquivo `.pkl` na pasta `models/predictors` para ser utilizado posteriormente na análise de resultados.
 
 
 ## 11. Geração dos artefatos
 
+Esta etapa representa a fase final do desenvolvimento do modelo, onde será criada a pipeline definitiva para produção. Com isso, o modelo estará preparado para ser deployado em ambientes em real-time, recebendo como entrada um JSON (payload) e retornando como saída um score (para a abordagem de classificação) ou a previsão do desconto (para a abordagem de regressão).
+
+
+> Classificação:
 ```bash
-python src/features/feature_selection_clf.py
+python src/models/generate_artifacts.py
 ```
 
+> Regressão:
 ```bash
-python src/features/feature_selection_reg.py
+python src/models/generate_artifacts.py --clf_mode False
 ```
 
 
@@ -160,6 +161,7 @@ python src/features/feature_selection_reg.py
 
 Os resultados obtidos podem ser consultados em [notebook/10-Resultados.ipynb](notebook/10-Resultados.ipynb), bem como breves análises a respeito das métricas e interpretações.
 
+==================================================
 
 
 Organização do projeto
