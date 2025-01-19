@@ -32,9 +32,51 @@ python src/data/download_raw_data.py
 ```
 
 
+## 2. Análise exploratória de dados
+
+ [notebook/01-Analise_ingestao.ipynb]
 
 
+## 3. Geração da base processada
 
+```bash
+python src/data/basic_process.py
+```
+
+## 4. Split das bases de treino e teste
+
+```bash
+python src/data/train_test_split.py
+```
+
+
+## 5. Split das bases de treino e teste
+
+```bash
+python src/data/train_test_split.py
+```
+
+
+## 6. Feature Selection
+
+```bash
+python src/features/feature_selection_clf.py
+```
+
+```bash
+python src/features/feature_selection_reg.py
+```
+
+
+## 7. Create encoders
+
+```bash
+python src/features/feature_selection_clf.py
+```
+
+```bash
+python src/features/feature_selection_reg.py
+```
 
 
 
@@ -42,41 +84,51 @@ Project Organization
 
 ------------
 
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md                       <- README do projeto para guiar a execução do projeto.
+    │
     ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── interim                     <- Dados intermediários que forem recebem transformados a partir dos dados raw.
+    │   ├── processed                   <- Dados finais, conjuntos de dados canônicos para o processo de modelagem.
+    │   └── raw                         <- Dados raw, originais e imutáveis.
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── notebooks                       <- Jupyter notebooks para análise descritiva, acompanhamento do desenvolvimento e processo interativos.
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── reports                         <- Relatórios do desenvolvimento.
+    │   └── logs                        <- Logs dos scripts executáveis.
+    │   └── visualization               <- Gráficos, imagens, evidências.
     │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
+    ├── requirements.txt                <- Os requirements do projeto, controle de versão.
+    │                                      gerado de forma análoga a `pip freeze > requirements.txt`.
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── pyproject.toml     <- makes project pip installable (pip install -e .) so src can be imported
+    ├── pyproject.toml                  <- Torna o projeto instalável (`pip install -e .`) para que src possa ser importado sem conflitos de diretórios.
     │
     │
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
+    ├── src                             <- Códigos fontes para uso neste projeto.
     │   │
-    │   ├── data           <- Scripts to download or generate data
+    │   ├── __init__.py                 <- Torna src um módulo Python.
+    │   │
+    │   ├── data                        <- Scripts para download da base raw e processamento intermediário.
     │   │   └── download_raw_data.py
     │   │   └── basic_process.py
     │   │
-    │   └── features       <- Scripts to turn raw data into features for modeling
-    │       └── build_features.py
+    │   ├── features                    <- Scripts que envolvem processamento, criação e seleção de features.
+    │   │    └── build_features.py
+    │   │    └── create_encoders.py
+    │   │    └── feature_selection.py
+    │   │    └── selected               <- Contém o arquivo de features selecionadas (pós feature selection).
+    │   │  
+    │   │    
+    │   ├──  models                     <- Scripts relacionados aos modelos (tunning, seleção e criação dos artefatos).
+    │   │   └── generate_artifacts.py
+    │   │   └── model_selection.py
+    │   │   └── tunning.py
+    │   │
+    │   └── utils                       <- Pasta de pacotes internos do projeto.
     │
-    └── models           <- Scripts to train models and then use trained models to make
-            │                    predictions
-            └── train_model.py
+    └── models                          <- Modelos treinados e serializados (encoders, predictor, artefato final).
+        └── encoders
+        └── predictos
+        └── wrapped
 
 --------
 
