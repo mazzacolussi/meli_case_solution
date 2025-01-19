@@ -69,6 +69,7 @@ Para realizar o split das bases de treino e teste, execute o comando abaixo. Nes
 ```bash
 python src/data/train_test_split.py
 ```
+
 As bases estarão disponíveis na pasta `data/train_test`.
 
 
@@ -78,13 +79,11 @@ No processo de feature selection foi utilizado o Boruta. Execute os comandos aba
 
 
 > Classificação:
-
 ```bash
 python src/features/feature_selection_clf.py
 ```
 
 > Regressão:
-
 ```bash
 python src/features/feature_selection_reg.py
 ```
@@ -99,8 +98,8 @@ Os encoders serão gerados nessa etapa na pasta `models`, assim como as bases en
 ```bash
 python src/features/create_encoder.py
 ```
-> Regressão:
 
+> Regressão:
 ```bash
 python src/features/create_encoder_regression.py
 ```
@@ -109,11 +108,14 @@ python src/features/create_encoder_regression.py
 ## 8. Model selection
 
 
+Os modelos baseline propostos nesta etapa foram os ensembles Random Forest, XGBoost e LightGBM. Essas escolhas foram feitas devido ao desempenho superior desses algoritmos em comparação com modelos paramétricos, além de sua maior flexibilidade. Esses modelos não exigem a normalização das features, nem demandam atenção especial à correlação entre as variáveis preditoras, entre outros pré-requisitos comuns em outras abordagens. Ao final do processo, serão gerados [boxplots](reports/visualization) para comparar o desempenho dos modelos, utilizando a metodologia de validação cruzada. Para a abordagem de classificação, foi utilizada a validação cruzada estratificada, considerando o desbalanceamento da variável target. Essa técnica garante que a proporção das classes seja preservada em cada divisão, proporcionando uma avaliação mais consistente e representativa do desempenho do modelo.
 
+> Classificação:
 ```bash
 python src/features/feature_selection_clf.py
 ```
 
+> Regressão:
 ```bash
 python src/features/feature_selection_reg.py
 ```
@@ -121,12 +123,14 @@ python src/features/feature_selection_reg.py
 
 ## 9. Tunning
 
+
+
 ```bash
-python src/features/feature_selection_clf.py
+python src/models/tunning.py
 ```
 
 ```bash
-python src/features/feature_selection_reg.py
+python src/models/tunning_reg.py
 ```
 
 
