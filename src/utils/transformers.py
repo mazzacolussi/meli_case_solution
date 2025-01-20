@@ -6,7 +6,8 @@ import json
 from unidecode import unidecode
 from sklearn.base import BaseEstimator, TransformerMixin
 
-def brand_processing(brand):
+def brand_processing(brand: str) -> str:
+    """Remove todos os caracteres especiais e pontuações. Padroniza para string minúscula """
     if brand is not None:
         brand = brand.lower()
         return re.sub(r'[^\w\s]', '', brand)
@@ -14,7 +15,8 @@ def brand_processing(brand):
         return None
 
 
-def color_name_processing(color):
+def color_name_processing(color: str) -> str:
+    """Remove todos os caracteres especiais e pontuações. Padroniza para string minúscula e faz o mapping para a cor em EN"""
     if color is not None:
         color = color.lower()
         color = re.sub(r'[^\w\s]', '', color)
@@ -55,7 +57,8 @@ def color_name_processing(color):
         return None
 
 
-def weight_processing(weight_str_value) -> float:
+def weight_processing(weight_str_value: str) -> float:
+    """Faz a extração da unidade de massa e, posteriormente, faz o mapping para grama"""
     if type(weight_str_value) == str:
         if weight_str_value.strip() != '':
             value, unit = re.match(r'(-?[\d.,]+)\s*([a-zA-Z]+)', weight_str_value.strip().lower(), re.IGNORECASE).groups()
@@ -78,7 +81,8 @@ def weight_processing(weight_str_value) -> float:
     return np.nan
 
 
-def ratio_calc(num, denom):
+def ratio_calc(num: float, denom: float) -> float:
+    """Calcula features que envolvem razão, evitando indefinições matemáticas"""
     if np.isnan(denom):
         return np.nan
     else:
